@@ -1,11 +1,13 @@
 <html>
     <title><%= title %></title>
     <%- partial('shared/head') %>
-    <%- partial(customAssets) %>
+    <% if(assets){ %>
+      <%- partial(assets) %>
+    <% } %>
 
     <body>
       <%- partial('shared/header') %>
-      <%- partial(appBody) %>
+      <%- partial(body) %>
     </body>
 
 </html>
