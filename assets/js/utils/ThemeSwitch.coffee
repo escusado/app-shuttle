@@ -4,6 +4,8 @@ Class('ThemeSwitch')({
       @element = $(element)
       @currentTheme = 'night'
 
+      $('body').addClass @currentTheme
+
       @bindEvents()
 
     bindEvents: ->
