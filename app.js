@@ -28,10 +28,9 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use('/img', express.static(__dirname + '/assets/img'));
   app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'public')));
-  app.use("/img", express.static(__dirname + 'assets/img'));
-
+  // app.use(express.static(path.join(__dirname, 'public')));
 });
 
 app.configure('development', function(){
