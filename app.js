@@ -36,6 +36,8 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+app.use(require('connect-assets')());
+
 app.get('/', routes.index);
 app.get('/content-type', contentType.index);
 
