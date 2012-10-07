@@ -30,6 +30,8 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
+  app.use("/img", express.static(__dirname + 'assets/img'));
+
 });
 
 app.configure('development', function(){
