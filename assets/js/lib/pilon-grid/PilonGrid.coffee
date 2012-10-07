@@ -20,8 +20,7 @@ Class('PilonGrid')({
         cont     : @pilonTemplate.find('.pilon-cont-template').html()
         colTitle : @pilonTemplate.find('.pilon-col-header-template').html()
         rowTitle : @pilonTemplate.find('.pilon-row-header-template').html()
-        row      : @pilonTemplate.find('.pilon-row-template').html()
-        field    : @pilonTemplate.find('.pilon-row-field-template').html()
+        col      : @pilonTemplate.find('.pilon-col-template').html()
       }
 
       @elements = {}
@@ -36,7 +35,8 @@ Class('PilonGrid')({
         @gridData =
           colHeader: [
             {
-              name: 'name' #column name
+              name: 'myColumna' #column name
+              type: 'string' #field type
               controlGroups: [ #tooltip controls
                 { 
                   title: 'Validations'
@@ -62,19 +62,27 @@ Class('PilonGrid')({
           ],
           grid:[
             #rows array
-            {name: 'name-title'}
+            {myColumna: 'A: name-title'},
+            {myColumna: 'B: name-title'},
+            {myColumna: 'C: name-title'}
           ]
 
       @renderGrid()
 
     renderGrid: ->
-      #build header
       for titleData, i in @gridData.colHeader
-        #set column name
-        @elements.colHeader.append new PilonColTitle(@tmpls.colTitle, titleData).getElement()
+        #build header
+        @elements.colHeader.append   new PilonColTitle(@tmpls.colTitle, titleData).getElement()
 
-      #build grid
-      for rowData, i in @gridData.grid
+        #Buld column data
+        newColumn = $(@tmpls.col).addClass @gridData.colHeader.name
+
+        #traverse entries looking for col value
+        for entry, i in  @gridData.grid
+          for colName, value of entry
+            newColumn.append new PilonField(colName, value)
+          # @elements.gridContent.append 
+
 
 
     addColumn: (index) ->

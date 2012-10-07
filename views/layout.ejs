@@ -1,13 +1,13 @@
 <html>
-    <title><%= title %></title>
-    <%- partial('shared/head') %>
-    <% if(assets){ %>
-      <%- partial(assets) %>
-    <% } %>
+    <title><?= title ?></title>
+    <?- partial('shared/head') ?>
+    <? if(assets){ ?>
+      <?- partial(assets) ?>
+    <? } ?>
 
     <body>
-      <%- partial('shared/header') %>
-      <%- partial(body) %>
+      <?- partial('shared/header') ?>
+      <?- partial(body) ?>
     </body>
 
 </html>

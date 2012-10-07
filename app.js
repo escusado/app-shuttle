@@ -13,12 +13,16 @@ var express = require('express')
   , path    = require('path')
   , engine  = require('ejs-locals')
   , helpers = require('express-helpers')
+  , ejs     = require('ejs')
 
 var app = express();
 
 helpers(app)
 
 app.engine('ejs', engine);
+
+ejs.open  = '<?';
+ejs.close = '?>';
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
