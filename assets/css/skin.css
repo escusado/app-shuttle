@@ -1,0 +1,110 @@
+body {
+  font-family: 'Droid Sans', Helvetica, Arial, sans-serif;
+}
+body.night {
+  background: #171f26 url("../img/noise.png") repeat;
+}
+body.day {
+  background: #d5dee5 url("../img/noise.png") repeat;
+}
+.night .content_type-table {
+  background-color: rgba(0,0,0,0.02);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.5), inset 1px 1px 0 0 rgba(255,255,255,0.1), 0 0 3px rgba(0,0,0,0.5);
+  border-radius: 3px;
+}
+.night .content_type-table .header {
+  background-color: rgba(255,255,255,0.05);
+  box-shadow: inset 0 -1px 0 0 rgba(255,255,255,0.1), inset 0 -2px 0 0 rgba(0,0,0,0.5);
+}
+.night .content_type-table .header .title {
+  box-shadow: 1px -1px 0 0 rgba(255,255,255,0.35), -1px 1px 0 0 rgba(255,255,255,0.45), 0 5px 5px rgba(0,0,0,0.06) inset;
+}
+.night .content_type-table .body.field-name {
+  box-shadow: none;
+}
+.night .grid-container input li,
+.night .grid-container .info li,
+.night .grid-container .col-header li,
+.night .grid-container .row-header {
+  box-shadow: inset 0 1px 0 0 rgba(0,0,0,0.8), 1px 1px 0 0 rgba(255,255,255,0.1), inset 0 0 4px rgba(0,0,0,0.8);
+  border-radius: 3px;
+}
+.night .grid-container .add-new {
+  box-shadow: 0 -1px 0 0 rgba(0,0,0,0.8), 1px 1px 0 0 rgba(255,255,255,0.1), inset 0 0 4px rgba(0,0,0,0.8);
+  border-radius: 3px;
+}
+.night .grid-container .grid {
+  box-shadow: 0 -1px 0 0 rgba(0,0,0,0.8), 1px 1px 0 0 rgba(255,255,255,0.1), inset 0 0 4px rgba(0,0,0,0.8);
+  border-radius: 3px;
+}
+.night .grid-container .grid .row {
+  box-shadow: 0 -1px 0 0 rgba(0,0,0,0.2), 0 1px 0 0 rgba(255,255,255,0.05);
+}
+.day {
+  background-image: none;
+}
+.day .actions-column {
+  box-shadow: none;
+}
+.day .actions-column .well {
+  background: none;
+  border: 0;
+}
+.day .actions-column .well .btn {
+  background: none;
+  border-radius: 1px;
+  box-shadow: none;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.64);
+}
+.day .actions-column .well .add-content {
+  color: #667;
+  border: 0;
+  border-top: solid 1px rgba(0,0,0,0.1);
+  background: none;
+}
+.day .actions-column .well .add-content:hover {
+  background: none repeat scroll 0 0 rgba(174,174,184,0.27);
+}
+.day .actions-column .well .icon-plus {
+  background-position: 0 -96px;
+}
+.day .content_type-wall {
+  border-radius: 0 5px 5px 0;
+  box-shadow: 5px 6px 5px rgba(0,0,0,0.21) inset;
+}
+.day .content_type-wall .content_type-table {
+  background-color: rgba(255,255,255,0.56);
+  box-shadow: 0 0 1px rgba(0,0,0,0.37);
+}
+.day .content_type-wall .content_type-table .header {
+  background-color: rgba(255,255,255,0.05);
+  border-bottom: 1px dotted rgba(0,0,0,0.14);
+}
+.day .content_type-wall .content_type-table .body .col-header .field-name {
+  box-shadow: none;
+}
+.day .content_type-wall .content_type-table .body .row-header .action-column-button {
+  box-shadow: none;
+}
+.day .content_type-wall .grid-container input li,
+.day .content_type-wall .grid-container .info li,
+.day .content_type-wall .grid-container .col-header li,
+.day .content_type-wall .grid-container .row-header {
+  box-shadow: 1px -1px 0 0 rgba(255,255,255,0.35), -1px 1px 0 0 rgba(255,255,255,0.45), 0 0 1px rgba(0,0,0,0.49) inset;
+  border-radius: 3px;
+}
+.day .content_type-wall .grid-container .row-header li {
+  box-shadow: 1px -1px 0 0 rgba(255,255,255,0.35), -1px 1px 0 0 rgba(255,255,255,0.45), 0 0 1px rgba(0,0,0,0.49) inset;
+}
+.day .content_type-wall .grid-container .add-new {
+  background: none repeat scroll 0 0 rgba(255,255,255,0.5);
+  box-shadow: 0 -1px 0 0 rgba(0,0,0,0.8), 1px 1px 0 0 rgba(255,255,255,0.1), inset 0 0 4px rgba(0,0,0,0.8);
+  border-radius: 3px;
+}
+.day .content_type-wall .grid-container .grid {
+  box-shadow: 1px -1px 0 0 rgba(255,255,255,0.35), -1px 1px 0 0 rgba(255,255,255,0.45), 0 0 1px rgba(0,0,0,0.49) inset;
+  border-radius: 3px;
+}
+.day .content_type-wall .grid-container .grid .row {
+  box-shadow: 0 -1px 0 0 rgba(0,0,0,0.2), 0 1px 0 0 rgba(255,255,255,0.05);
+}
