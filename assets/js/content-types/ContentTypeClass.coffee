@@ -3,9 +3,9 @@ Class('ContentTypeClass')({
     init: (template, initData) ->
       @element = $($(template).html()) #jqueryfy template
 
-      @element.find('.body').append new pilonGrid().getElement()
+      @element.find('.body').append new PilonGrid().getElement()
 
-      @element
+      # @element
 
     getElement: ->
       @element

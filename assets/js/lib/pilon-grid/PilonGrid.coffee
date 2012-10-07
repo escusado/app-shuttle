@@ -1,11 +1,11 @@
 #TODO:
 #Implement row header title and tooltip controls
-Class('pilonGrid')({
+Class('PilonGrid')({
   prototype:
     init: (options) ->
       #config vars
       defaults = {
-        template   : '.pilon-grid'
+        template   : '.pilon-grid-template'
         colWidth   : 100
         colPadding : 4
         #data: Json encoded data passed troug options
@@ -13,19 +13,18 @@ Class('pilonGrid')({
 
       options = $.extend yes, defaults, options
 
-      @pilonTemplate = $($(options.template).html()) #jqueryfy template
+      @pilonTemplate = $(options.template) #jqueryfy template
 
       #Templates
       @tmpls = {
         cont     : @pilonTemplate.find('.pilon-cont-template').html()
         colTitle : @pilonTemplate.find('.pilon-col-header-template').html()
         rowTitle : @pilonTemplate.find('.pilon-row-header-template').html()
-        row      : @pilonTemplate.find('.pilon-row-template').html()
-        field    : @pilonTemplate.find('.pilon-row-field-template').html()
+        col      : @pilonTemplate.find('.pilon-col-template').html()
       }
-      
+
       @elements = {}
-      @elements.cont        = $(@templates.cont)
+      @elements.cont        = $(@tmpls.cont)
       @elements.colHeader   = @elements.cont.find '.col-header'
       @elements.rowHeader   = @elements.cont.find '.row-header'
       @elements.gridContent = @elements.cont.find '.content'
@@ -36,7 +35,8 @@ Class('pilonGrid')({
         @gridData =
           colHeader: [
             {
-              name: no #column name
+              name: 'myColumna' #column name
+              type: 'string' #field type
               controlGroups: [ #tooltip controls
                 { 
                   title: 'Validations'
@@ -61,22 +61,34 @@ Class('pilonGrid')({
             }
           ],
           grid:[
-            #row
-            [no]
+            #rows array
+            {myColumna: 'A: name-title'},
+            {myColumna: 'B: name-title'},
+            {myColumna: 'C: name-title'}
           ]
 
+      @renderGrid()
+
     renderGrid: ->
-      #build header
-      @gridData.colHeader.each (i, titleData) =>
-        #set column name
-        @elements.colHeader.append new PilonColTitle titleData, @tmpls.colTitle
-        
+      for titleData, i in @gridData.colHeader
+        #build header
+        @elements.colHeader.append   new PilonColTitle(@tmpls.colTitle, titleData).getElement()
+
+        #Buld column data
+        newColumn = $(@tmpls.col).addClass @gridData.colHeader.name
+
+        #traverse entries looking for col value
+        for entry, i in  @gridData.grid
+          for colName, value of entry
+            newColumn.append new PilonField(colName, value)
+          # @elements.gridContent.append 
+
 
 
     addColumn: (index) ->
       if index? then index = index
 
     getElement: ->
-      @element.body
+      @elements.cont
 
 })

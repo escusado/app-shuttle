@@ -1,4 +1,4 @@
-<script type="text/html" class="pilon-grid-template">
+<div class="pilon-grid-template hidden">
   
   <script type="text/html" class="pilon-cont-template">
     <div class="grid-container clearfix">
@@ -64,8 +64,13 @@
     <div class="col" data-col-name=""></div>
   </script>
 
-  <script type="text/html" class="pilon-col-field-template">
-    <input class="field" data-col="" data-row="" type="text" placeholder="Value">
+
+  <script type="text/html" class="pilon-col-field-template" data-field-type="string">
+    <input class="field" type="text" placeholder="Value" data-col="" data-row="">
   </script>
 
-</script>
+  <script type="text/html" class="pilon-col-field-template" data-field-type="image">
+    <div class="field pilon-image-field" data-col="" data-row="">Image data</div>
+  </script>
+
+</div>
