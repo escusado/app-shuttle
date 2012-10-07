@@ -1,8 +1,4 @@
-
-/*
- * GET home page.
- */
-
+//Homepages
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+  res.render('layout', { title: 'App Shuttle', view: 'main' });
 };

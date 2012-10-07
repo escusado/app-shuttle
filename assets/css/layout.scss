@@ -1,0 +1,67 @@
+ul,
+li{ list-style: none; }
+
+body {padding-top: 60px; padding-bottom: 40px;}
+
+.navbar {
+  .controls {float: right;}
+}
+
+.sidebar-nav { padding: 9px 0;}
+
+.btn-ctrl {font-size: 0; line-height: 0; padding: 0; line-height: 0;}
+.btn-ctrl-med {
+  @extend .btn-ctrl;
+  padding: 5px;}
+
+.content_type-table { margin: 10px; float: left; overflow: hidden; 
+  .header { height: 25px; padding: 5px;
+    .title { width: 150px; font-size: 10px; margin: 0; padding: 0 0 0 4px; float: left;}
+      .controls { margin: 3px; padding: 0; float: right;
+       li { line-height: 0;}
+    }
+  } //heder
+  
+  .body { padding: 5px;}
+}
+
+.grid-container { width: 350px; height: 200px;
+  input{ font-size: 10px; margin: 0; padding: 0 0 0 4px;}
+
+  .info {width:29px; height:25px; float: left;}
+
+  .col-mask { width: 294px; height: 25px; float: left; overflow: hidden;}
+
+  .col-header { width: 400px; height: 43px; float: left; margin: 0; overflow-x: scroll;
+    li { width: 100px; height: 23px; float: left; margin-left: 3px;
+      &:first-child{ margin-left: 0;}
+      
+      .btn{margin-left: 4px;}
+      
+      .col-name {width: 66px; height: 15px;}
+    }
+  } //.col-header
+
+  .row-container {float: left;}
+
+  .row-mask { width: 26px; overflow: hidden; margin-top: 3px;}  
+
+  .row-header { 
+    @extend .col-header;
+    width: 43px; height: 80px; float: left; margin: 0; overflow-x: hidden; overflow-y: scroll;
+
+    li { width: 25px; margin: 3px 0 0 0; float: none;
+      &:first-child { margin-top: 0;}
+    }
+  } //.row-header
+
+  .add-new { width: 24px; float: left;
+    .btn{ margin: 2px 0 3px 3px; padding: 1px;}
+  }
+
+  .grid { width: 306px; height: 100px; margin: 2px 0 0 2px; float: left;
+    .row { width: 306px; height: 26px; margin: 0px;}
+    .field { width: 86px; height: 15px; margin: 4px 0 0 6px;}    
+  }
+
+}
