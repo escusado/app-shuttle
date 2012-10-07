@@ -1,11 +1,11 @@
 #TODO:
 #Implement row header title and tooltip controls
-Class('pilonGrid')({
+Class('PilonGrid')({
   prototype:
     init: (options) ->
       #config vars
       defaults = {
-        template   : '.pilon-grid'
+        template   : '.pilon-grid-template'
         colWidth   : 100
         colPadding : 4
         #data: Json encoded data passed troug options
@@ -13,7 +13,7 @@ Class('pilonGrid')({
 
       options = $.extend yes, defaults, options
 
-      @pilonTemplate = $($(options.template).html()) #jqueryfy template
+      @pilonTemplate = $(options.template) #jqueryfy template
 
       #Templates
       @tmpls = {
@@ -23,9 +23,9 @@ Class('pilonGrid')({
         row      : @pilonTemplate.find('.pilon-row-template').html()
         field    : @pilonTemplate.find('.pilon-row-field-template').html()
       }
-      
+
       @elements = {}
-      @elements.cont        = $(@templates.cont)
+      @elements.cont        = $(@tmpls.cont)
       @elements.colHeader   = @elements.cont.find '.col-header'
       @elements.rowHeader   = @elements.cont.find '.row-header'
       @elements.gridContent = @elements.cont.find '.content'
@@ -36,7 +36,7 @@ Class('pilonGrid')({
         @gridData =
           colHeader: [
             {
-              name: no #column name
+              name: 'name' #column name
               controlGroups: [ #tooltip controls
                 { 
                   title: 'Validations'
@@ -61,22 +61,26 @@ Class('pilonGrid')({
             }
           ],
           grid:[
-            #row
-            [no]
+            #rows array
+            {name: 'name-title'}
           ]
+
+      @renderGrid()
 
     renderGrid: ->
       #build header
-      @gridData.colHeader.each (i, titleData) =>
+      for titleData, i in @gridData.colHeader
         #set column name
-        @elements.colHeader.append new PilonColTitle titleData, @tmpls.colTitle
-        
+        @elements.colHeader.append new PilonColTitle(@tmpls.colTitle, titleData).getElement()
+
+      #build grid
+      for rowData, i in @gridData.grid
 
 
     addColumn: (index) ->
       if index? then index = index
 
     getElement: ->
-      @element.body
+      @elements.cont
 
 })

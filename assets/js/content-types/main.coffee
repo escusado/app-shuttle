@@ -1,4 +1,5 @@
 $(document).ready ->
-  # new ContentTypesWallClass '.content_type-wall'
+  console.log 'asdf'
+  new ContentTypesWallClass '.content_type-wall'
   new ThemeSwitch '.style-switch'
-  $('.nano').nanoScroller({autoHide:false});
+  # $('.nano').nanoScroller({autoHide:false});
