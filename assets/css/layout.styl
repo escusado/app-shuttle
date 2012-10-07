@@ -20,23 +20,51 @@ body
   @extend .btn-ctrl;
   padding: 5px;
 
-.content_type-table
-  margin: 10px; float: left; overflow: hidden; 
+.actions-column
+  .well
+    padding: 0; 
+    .btn
+      padding: 5px 5px 5px 25px; min-height: 50px; text-align: left;
+      .icon-plus
+        margin-left: -19px; margin-top: 10%; float:left;
+
+.content_type-wall
+  margin: 0; -moz-box-sizing: border-box; display: block;  float: left; min-height: 30px; width: 85%;
   
-  .header
-    height: 25px; padding: 5px;
+  .content_type-table
+    margin: 10px; float: left; overflow: hidden;
     
-    .title
-      width: 150px; font-size: 10px; margin: 0; padding: 0 0 0 4px; float: left;
+    .header
+      height: 40px; padding: 10px 0 0 10px;
       
+      .title
+        width: 65%; font-size: 12px; margin: 0; padding: 5px; float: left;
+        
       .controls
         margin: 3px; padding: 0; float: right;
         
         li
-        line-height: 0;
+          line-height: 0;
 
-  .body
-    padding: 5px;
+    .body
+      padding: 5px;
+      .col-mask
+        height: 31px; 
+        .col-header
+          height: 50px;
+          .field-name
+            position: relative;
+            .col-name
+              height: 21px; margin: 3px 0;
+            .field-controls
+              position: absolute; z-index: 2;
+
+        .col-header:hover
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16) inset;
+.day
+  padding-top: 40px;
+  .content_type-wall
+    margin: 0;
 
 .grid-container
   width: 350px; height: 200px;
@@ -90,8 +118,11 @@ body
   .grid
     width: 306px; height: 100px; margin: 2px 0 0 2px; float: left;
     
-    .row
-      width: 306px; height: 26px; margin: 0px;
+    .content
+      width: 250%;
+    
+      .col
+        width: 100px; margin: 0px; float: left;
 
-    .field
-      width: 86px; height: 15px; margin: 4px 0 0 6px;
+      .field
+        width: 86px; height: 15px; margin: 4px 0 0 6px;
