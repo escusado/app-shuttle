@@ -80,7 +80,7 @@ Class('PilonGrid')({
         #traverse entries looking for col value
         for entry, i in  @gridData.grid
           for colName, value of entry
-            newColumn.append new PilonField(colName, value)
+            # newColumn.append new PilonField(colName, value)
           # @elements.gridContent.append 
 
 
